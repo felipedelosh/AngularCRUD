@@ -7,6 +7,13 @@ import { NotfoundComponent } from './demo/components/notfound/notfound.component
         RouterModule.forRoot(
             [
                 { path: 'notfound', component: NotfoundComponent },
+                {
+                    path: 'inventario',
+                    loadChildren: () =>
+                        import(
+                            './views/inventory/inventory.module'
+                        ).then((m) => m.InventoryModule),
+                },
                 { path: '**', redirectTo: '/notfound' },
             ],
             {
