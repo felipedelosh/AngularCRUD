@@ -14,7 +14,6 @@ export class ProductsService {
 
 
   getAll(): Array<IProduct>{
-
     this.httpClient.get(this.urlAPI).subscribe(
       (data: any) => {
         this.arrProduct = data;
@@ -28,11 +27,11 @@ export class ProductsService {
 
   }
 
-  edit(): void{
+  edit(product: IProduct): void{
 
   }
 
-  delete(): void{
+  delete(product: IProduct): void{
 
   }
 

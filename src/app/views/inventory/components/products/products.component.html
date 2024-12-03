@@ -1,3 +1,5 @@
+<p-button label="ADD" styleClass="p-button-success"/>
+<br>
 <p-table [value]="getData()" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
@@ -17,9 +19,9 @@
             <td>
                 <p-button label="INFORMATION" (onClick)="viewINFO(product)"/>
                 <br>
-                <p-button label="EDIT" />
+                <p-button label="EDIT" styleClass="p-button-warning" />
                 <br>
-                <p-button label="DELETE" />
+                <p-button label="DELETE" styleClass="p-button-danger"/>
             </td>
         </tr>
     </ng-template>
