@@ -1,4 +1,4 @@
-<p-button label="ADD" styleClass="p-button-success"/>
+<p-button label="ADD" styleClass="p-button-success" (onClick)="showModal('ADD')"/>
 <br>
 <p-table [value]="getData()" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
