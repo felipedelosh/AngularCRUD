@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IProduct } from './models/Iproduct';
+import { ProductsService } from './services/products.service';
 
 @Component({
   selector: 'app-products',
@@ -7,14 +8,14 @@ import { IProduct } from './models/Iproduct';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
+  constructor(private productsService: ProductsService){}
 
-  arrProduct: Array<IProduct> = [];
-
-  constructor(){}
-
+  getData(){
+    return this.productsService.arrProduct;
+  }
 
   ngOnInit(){
-
+    this.productsService.getAll();
   }
 
 }
