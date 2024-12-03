@@ -18,6 +18,10 @@ export class ProductsComponent {
     alert(product.description);
   }
 
+  delete(product: IProduct):void{
+    this.productsService.delete(product);
+  }
+
   ngOnInit(){
     this.productsService.getAll();
   }

@@ -32,7 +32,13 @@ export class ProductsService {
   }
 
   delete(product: IProduct): void{
+    const delURL = `https://fakestoreapi.com/products/${product.id}`;
+    
+    this.httpClient.delete(delURL).subscribe((data:any)=>{
+      this.arrProduct = data;
+    });
 
+    alert(`Delete product: ${product.id}`);
   }
 
 }
