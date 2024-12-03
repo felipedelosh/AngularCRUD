@@ -14,6 +14,10 @@ export class ProductsComponent {
     return this.productsService.arrProduct;
   }
 
+  viewINFO(product: IProduct){
+    alert(product.description);
+  }
+
   ngOnInit(){
     this.productsService.getAll();
   }

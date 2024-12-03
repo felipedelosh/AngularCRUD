@@ -3,16 +3,24 @@
         <tr>
             <th>ID</th>
             <th>TITLE</th>
-            <th>DESCRIPION</th>
+            <th>CATEGORY</th>
             <th>PRICE</th>
+            <th>ACTTIONS</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>
         <tr>
             <td>{{ product.id }}</td>
             <td>{{ product.title }}</td>
-            <td>{{ product.description }}</td>
+            <td>{{ product.category }}</td>
             <td>{{ product.price }}</td>
+            <td>
+                <p-button label="INFORMATION" (onClick)="viewINFO(product)"/>
+                <br>
+                <p-button label="EDIT" />
+                <br>
+                <p-button label="DELETE" />
+            </td>
         </tr>
     </ng-template>
 </p-table>

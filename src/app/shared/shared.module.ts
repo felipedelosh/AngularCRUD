@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
-
-
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [],
@@ -10,7 +9,8 @@ import { TableModule } from 'primeng/table';
     CommonModule
   ],
   exports: [
-    TableModule
+    TableModule,
+    ButtonModule
   ]
 })
 export class SharedModule { }
