@@ -11,11 +11,25 @@ import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 export class ProductComponent {
 
+  private isEditableProduct: boolean = false;
+
   constructor(
     private productsService: ProductsService,
     private dynamicDialogConfig: DynamicDialogConfig,
     private dynamicDialogRef: DynamicDialogRef,
   ){
+
+  }
+
+  ngOnInit(){
+
+    const data = this.dynamicDialogConfig.data!;
+
+    if(data){
+      const product : IProduct = data;
+      this.isEditableProduct = true;
+    }
+
 
   }
 

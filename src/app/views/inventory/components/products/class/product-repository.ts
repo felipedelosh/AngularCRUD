@@ -20,6 +20,7 @@ export class ProductRepository {
     edit(product: IProduct){
         return new FormBuilder().group(
             {
+                id: new FormControl(product.id),
                 title: new FormControl(product.title),
                 description: new FormControl(product.description),
                 price: new FormControl(product.price)

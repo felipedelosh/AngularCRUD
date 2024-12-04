@@ -16,18 +16,9 @@ export class ProductsComponent {
     return this.productsService.arrProduct;
   }
 
-  showModal(action: string){
-
-    let displayedText: string = "";
-
-    if (action === 'ADD'){
-      displayedText = "Agregar nuevo producto";
-    }else{
-      displayedText = "Modificar producto";
-    }
-
+  showModal(){
     this.dialogService.open(ProductComponent, {
-      header: displayedText,
+      header: "Agregar producto",
       height: '400px',
       width: '300px'
     });
@@ -39,6 +30,15 @@ export class ProductsComponent {
 
   delete(product: IProduct):void{
     this.productsService.delete(product);
+  }
+
+  edit(product: IProduct):void{
+    this.dialogService.open(ProductComponent, {
+      header: "Modificar producto",
+      data: product,
+      height: '400px',
+      width: '300px'
+    });
   }
 
   ngOnInit(){

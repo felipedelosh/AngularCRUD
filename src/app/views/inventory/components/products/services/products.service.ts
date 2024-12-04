@@ -25,7 +25,15 @@ export class ProductsService extends ProductRepository {
     }
 
     create(product: IProduct): void {
-        alert(product.description);
+        const postURL = "https://fakestoreapi.com/products";
+
+        this.httpClient.post(postURL, product).subscribe(
+            (data) => {
+                alert("SAVE IN API");
+                console.log(data);
+            }
+        );
+
     }
 
     delete(product: IProduct): void {
