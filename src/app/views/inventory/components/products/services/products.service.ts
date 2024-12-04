@@ -24,7 +24,9 @@ export class ProductsService extends ProductRepository {
         return [];
     }
 
-    create(product: IProduct): void {}
+    create(product: IProduct): void {
+        alert(product.description);
+    }
 
     delete(product: IProduct): void {
         const delURL = `https://fakestoreapi.com/products/${product.id}`;

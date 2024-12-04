@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import { IProduct } from '../../models/Iproduct';
+import { FormGroup } from '@angular/forms';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-product',
@@ -8,7 +11,11 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ProductComponent {
 
-  constructor(private productsService: ProductsService){
+  constructor(
+    private productsService: ProductsService,
+    private dynamicDialogConfig: DynamicDialogConfig,
+    private dynamicDialogRef: DynamicDialogRef,
+  ){
 
   }
 
@@ -16,8 +23,23 @@ export class ProductComponent {
     return this.productsService.form;
   }
 
-  otro(){
-    alert("Hola mundo");
+  save(){
+    console.log(this.productsService.form.value);
+
+    const form: FormGroup = this.productsService.form;
+    if (form.valid){
+      const product: IProduct = this.productsService.form.value as IProduct;
+      this.productsService.create(product);
+      alert("Producto guardado con exito.");
+    }else{
+      alert("Error al guardar el producto.");
+    }
+
+    this.closeModalWindow();
+  }
+
+  closeModalWindow(){
+    this.dynamicDialogRef.close();
   }
   
 }

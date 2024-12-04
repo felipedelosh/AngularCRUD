@@ -1,20 +1,20 @@
 <p-card>
     <form [formGroup]="getForm()">
         <span class="p-float-label">
-            <input pInputText id="title" formControlName="title" />
+            <input pInputText id="title" formControlName="title" [required]="true" />
             <label htmlFor="title">Title</label>
         </span>
         <br />
         <span class="p-float-label">
-            <input pInputText id="description" formControlName="description" />
+            <input pInputText id="description" formControlName="description"  [required]="true"/>
             <label htmlFor="description">Description</label>
         </span>
         <br />
         <span class="p-float-label">
-            <p-inputNumber inputId="price" formControlName="price"></p-inputNumber>
+            <p-inputNumber inputId="price" formControlName="price" [required]="true"></p-inputNumber>
             <label htmlFor="price">Price</label>
         </span>
         <br />
-        <button pButton (click)="otro()" pRipple label="SAVE" class="p-button-success"></button>
+        <button pButton (click)="save()" pRipple label="SAVE" class="p-button-success"></button>
     </form>
 </p-card>
