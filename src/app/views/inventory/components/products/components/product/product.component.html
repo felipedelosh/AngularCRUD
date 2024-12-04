@@ -1,18 +1,20 @@
 <p-card>
-    <span class="p-float-label">
-        <input pInputText id="id" />
-        <label htmlFor="id">id</label>
-    </span>
-    <br>
-    <span class="p-float-label">
-        <input pInputText id="description" />
-        <label htmlFor="description">Description</label>
-    </span>
-    <br>
-    <span class="p-float-label">
-        <p-inputNumber inputId="price"> </p-inputNumber>
-        <label htmlFor="price">price</label>
-    </span>
-    <br>
-    <button pButton pRipple label="SAVE" class="p-button-success"></button>
+    <form [formGroup]="getForm()">
+        <span class="p-float-label">
+            <input pInputText id="title" formControlName="title" />
+            <label htmlFor="title">Title</label>
+        </span>
+        <br />
+        <span class="p-float-label">
+            <input pInputText id="description" formControlName="description" />
+            <label htmlFor="description">Description</label>
+        </span>
+        <br />
+        <span class="p-float-label">
+            <p-inputNumber inputId="price" formControlName="price"></p-inputNumber>
+            <label htmlFor="price">Price</label>
+        </span>
+        <br />
+        <button pButton (click)="otro()" pRipple label="SAVE" class="p-button-success"></button>
+    </form>
 </p-card>

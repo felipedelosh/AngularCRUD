@@ -6,6 +6,8 @@ import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
+import { RippleModule } from 'primeng/ripple';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -18,7 +20,9 @@ import { CardModule } from 'primeng/card';
     DialogModule,
     InputNumberModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    ReactiveFormsModule,
+    RippleModule
   ]
 })
 export class SharedModule { }

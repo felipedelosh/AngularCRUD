@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-product',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
+  constructor(private productsService: ProductsService){
+
+  }
+
+  getForm(){
+    return this.productsService.form;
+  }
+
+  otro(){
+    alert("Hola mundo");
+  }
+  
 }
