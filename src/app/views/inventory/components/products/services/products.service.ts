@@ -33,7 +33,17 @@ export class ProductsService extends ProductRepository {
                 console.log(data);
             }
         );
+        alert("Producto guardado con exito.");
+    }
 
+    editProd(product: IProduct){
+        const editURL = `https://fakestoreapi.com/products/${product.id}`;
+
+        this.httpClient.put(editURL, product).subscribe((data: any) => {
+            this.arrProduct = data;
+        });
+
+        alert(`Edit product: ${product.id}`);
     }
 
     delete(product: IProduct): void {

@@ -22,15 +22,13 @@ export class ProductComponent {
   }
 
   ngOnInit(){
-
     const data = this.dynamicDialogConfig.data!;
 
     if(data){
       const product : IProduct = data;
+      this.productsService.form = this.productsService.edit(product);
       this.isEditableProduct = true;
     }
-
-
   }
 
   getForm(){
@@ -43,8 +41,13 @@ export class ProductComponent {
     const form: FormGroup = this.productsService.form;
     if (form.valid){
       const product: IProduct = this.productsService.form.value as IProduct;
-      this.productsService.create(product);
-      alert("Producto guardado con exito.");
+
+      if(this.isEditableProduct){
+        this.productsService.editProd(product);
+      }else{
+        this.productsService.create(product);
+      }
+
     }else{
       alert("Error al guardar el producto.");
     }
