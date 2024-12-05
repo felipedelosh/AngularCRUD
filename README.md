@@ -4,7 +4,7 @@
 
 ![Banner](Docs/banner.png)
 <br>
-:construction: Status of project :construction:
+:construction: In Construction :construction:
 <br>
 I developed a project using Angular to consume the API from FakeStoreAPI. This project leverages Angular's powerful features to create a dynamic and responsive web application. Utilizing the PrimeNG library, I enhanced the user interface with rich and interactive components.
 
