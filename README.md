@@ -12,9 +12,9 @@ I developed a project using Angular to consume the API from FakeStoreAPI. This p
 
 - `Function 1`: GET ALL PRODUCTS OF API https://fakestoreapi.com/products<br>
 - `Function 2`: Make a CRUD funcion: "Create new peoject"<br>
-- `Function 2`: Make a CRUD funcion: "Read all products"<br>
-- `Function 2`: Make a CRUD funcion: "Update product"<br>
-- `Function 2`: Make a CRUD funcion: "Delete product"<br>
+- `Function 3`: Make a CRUD funcion: "Read all products"<br>
+- `Function 4`: Make a CRUD funcion: "Update product"<br>
+- `Function 5`: Make a CRUD funcion: "Delete product"<br>
 
 
 # Architecture
