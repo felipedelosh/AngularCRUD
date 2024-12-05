@@ -43,7 +43,8 @@ GO TO: `http://localhost:4200/#/inventario/productos`
 
 ## :warning:Warning.
 
-- generate views from https://www.primefaces.org/primeng-v15-lts/installation https://www.primefaces.org/primeng-v15-lts/installation 
+- generate views from https://www.primefaces.org/primeng-v15-lts/installation
+- generate all interlan data from https://fakestoreapi.com/products
 
 ## Autor
 
