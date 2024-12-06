@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../models/Iproduct';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment'
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProductRepository } from '../class/product-repository';
 
@@ -8,7 +9,7 @@ import { ProductRepository } from '../class/product-repository';
     providedIn: 'root',
 })
 export class ProductsService extends ProductRepository {
-    private readonly urlAPI: string = 'https://fakestoreapi.com/products';
+    private readonly urlAPI: string = environment.urlAPI;
     public arrProduct: Array<IProduct> = [];
     public form: FormGroup = this.new();
 
@@ -25,9 +26,7 @@ export class ProductsService extends ProductRepository {
     }
 
     create(product: IProduct): void {
-        const postURL = "https://fakestoreapi.com/products";
-
-        this.httpClient.post(postURL, product).subscribe(
+        this.httpClient.post(this.urlAPI, product).subscribe(
             (data) => {
                 alert("SAVE IN API");
                 console.log(data);
@@ -37,7 +36,7 @@ export class ProductsService extends ProductRepository {
     }
 
     editProd(product: IProduct){
-        const editURL = `https://fakestoreapi.com/products/${product.id}`;
+        const editURL = `${this.urlAPI}/${product.id}`;
 
         this.httpClient.put(editURL, product).subscribe((data: any) => {
             this.arrProduct = data;
@@ -47,7 +46,7 @@ export class ProductsService extends ProductRepository {
     }
 
     delete(product: IProduct): void {
-        const delURL = `https://fakestoreapi.com/products/${product.id}`;
+        const delURL = `${this.urlAPI}/${product.id}`;
 
         this.httpClient.delete(delURL).subscribe((data: any) => {
             this.arrProduct = data;
