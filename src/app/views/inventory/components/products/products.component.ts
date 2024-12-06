@@ -12,7 +12,7 @@ import { ProductComponent } from './components/product/product.component';
 export class ProductsComponent {
   constructor(private productsService: ProductsService, private dialogService: DialogService){}
 
-  getData(){
+  get arrProduct(){
     return this.productsService.arrProduct;
   }
 
